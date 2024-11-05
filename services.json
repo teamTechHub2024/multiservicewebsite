@@ -1,0 +1,48 @@
+{
+    "groceryStores": [
+        {
+            "name": "FreshMart",
+            "items": ["Fruits", "Vegetables", "Dairy", "Meat"]
+        },
+        {
+            "name": "Daily Needs",
+            "items": ["Canned Goods", "Snacks", "Beverages"]
+        }
+    ],
+    "electronicGadgets": [
+        {
+            "name": "TechStore",
+            "items": ["Laptops", "Mobiles", "Tablets"]
+        }
+    ],
+    "banks": [
+        {
+            "name": "National Bank",
+            "branches": ["Main St", "Second St"]
+        }
+    ],
+    "hospitals": [
+        {
+            "name": "City Hospital",
+            "doctors": ["Dr. Smith", "Dr. Jones"]
+        }
+    ],
+    "schools": [
+        {
+            "name": "Greenwood High",
+            "details": "Primary and Secondary Education"
+        }
+    ],
+    "restaurants": [
+        {
+            "name": "Food Palace",
+            "menu": ["Pizza", "Burger", "Pasta"]
+        }
+    ],
+    "cabServices": [
+        {
+            "name": "QuickCabs",
+            "contact": "123-456-7890"
+        }
+    ]
+}

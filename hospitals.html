@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Finder</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #hospitals { margin-top: 20px; }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Hospitals</h1>
+    </header>
+
+    <nav class="sidebar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="grocery-stores.html">Grocery Stores</a></li>
+            <li><a href="electronic-gadgets.html">Electronic Gadgets</a></li>
+            <li><a href="banks.html">Banks & ATMs</a></li>
+            <li><a href="hospitals.html">Hospitals</a></li>
+            <li><a href="schools.html">Schools & Colleges</a></li>
+            <li><a href="restaurants.html">Restaurants</a></li>
+            <li><a href="cab-services.html">Cab Services</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Find Hospitals Near You</h1>
+    <select id="location">
+        <option value="">Select a location</option>
+        <option value="New York, NY">New York, NY</option>
+        <option value="Los Angeles, CA">Los Angeles, CA</option>
+        <option value="Chicago, IL">Chicago, IL</option>
+        <!-- Add more locations as needed -->
+    </select>
+    <button id="fetchHospitals">Get Hospitals</button>
+
+    <div id="hospitals"></div>
+
+    <script>
+        $('#fetchHospitals').click(function() {
+            const location = $('#location').val();
+            if (location) {
+                fetchHospitals(location);
+            } else {
+                alert('Please select a location.');
+            }
+        });
+
+        function fetchHospitals(location) {
+            const query = encodeURIComponent(`[out:json];node["amenity"="hospital"](around:10000, ${location});out;`);
+            const url = `https://overpass-api.de/api/interpreter?data=${query}`;
+
+            $.get(url, function(data) {
+                displayHospitals(data.elements);
+            }).fail(function() {
+                $('#hospitals').html('<p>Error fetching data. Please try again.</p>');
+            });
+        }
+
+        function displayHospitals(hospitals) {
+            $('#hospitals').empty();
+            if (hospitals.length > 0) {
+                const list = $('<ul></ul>');
+                hospitals.forEach(hospital => {
+                    const name = hospital.tags?.name || "Unnamed Hospital";
+                    const address = hospital.tags?.addr || "Address not available";
+                    list.append(`<li>${name} - ${address}</li>`);
+                });
+                $('#hospitals').append(list);
+            } else {
+                $('#hospitals').html('<p>No hospitals found.</p>');
+            }
+        }
+    </script>
+        <section id="hospitals">
+            <h2>List of Hospitals</h2>
+            <div id="hospital-list">
+                <div class="hospital">
+                    <i class="fas fa-hospital-alt"></i>
+                    <div class="hospital-info">
+                        <strong>City General Hospital</strong>
+                        <p>Location: Downtown</p>
+                        <p>Services: Emergency, Surgery, Maternity</p>
+                    </div>
+                </div>
+                <div class="hospital">
+                    <i class="fas fa-hospital-alt"></i>
+                    <div class="hospital-info">
+                        <strong>St. Mary's Medical Center</strong>
+                        <p>Location: East Side</p>
+                        <p>Services: Pediatrics, Cardiology, Orthopedics</p>
+                    </div>
+                </div>
+                <div class="hospital">
+                    <i class="fas fa-hospital-alt"></i>
+                    <div class="hospital-info">
+                        <strong>Greenwood Health Clinic</strong>
+                        <p>Location: Greenwood</p>
+                        <p>Services: Family Medicine, General Health, Pharmacy</p>
+                    </div>
+                </div>
+                <div class="hospital">
+                    <i class="fas fa-hospital-alt"></i>
+                    <div class="hospital-info">
+                        <strong>Downtown Rehabilitation Center</strong>
+                        <p>Location: Central District</p>
+                        <p>Services: Physical Therapy, Occupational Therapy</p>
+                    </div>
+                </div>
+                <div class="hospital">
+                    <i class="fas fa-hospital-alt"></i>
+                    <div class="hospital-info">
+                        <strong>Sunrise Hospital</strong>
+                        <p>Location: West End</p>
+                        <p>Services: Cancer Care, Radiology, Surgery</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Community Services</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

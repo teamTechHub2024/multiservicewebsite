@@ -1,0 +1,422 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 200px;
+    background: #444;
+    color: #fff;
+    padding: 15px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+section {
+    margin-bottom: 40px;
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+#grocery-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.store {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+.store i {
+    font-size: 24px;
+    margin-right: 15px;
+    color: #28a745;
+}
+
+.store-info {
+    flex-grow: 1;
+}
+
+.store-info strong {
+    display: block;
+    font-size: 18px;
+    color: #333;
+}
+
+.store-info p {
+    margin: 5px 0 0;
+    color: #666;
+}
+.item-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 5px 0 0 20px; /* Indent the list */
+}
+
+.item-list li {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.item-list i {
+    margin-right: 10px; /* Space between icon and text */
+    color: #28a745; /* Green color for icons */
+}
+#bank-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.bank {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+.bank i {
+    font-size: 24px;
+    margin-right: 15px;
+    color: #007bff; /* Blue color for icons */
+}
+
+.bank-info {
+    flex-grow: 1;
+}
+
+.bank-info strong {
+    display: block;
+    font-size: 18px;
+    color: #333;
+}
+
+.bank-info p {
+    margin: 5px 0 0;
+    color: #666;
+}
+#school-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.institution {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+.institution i {
+    font-size: 24px;
+    margin-right: 15px;
+    color: #007bff; /* Blue color for icons */
+}
+
+.institution-info {
+    flex-grow: 1;
+}
+
+.institution-info strong {
+    display: block;
+    font-size: 18px;
+    color: #333;
+}
+
+.institution-info p {
+    margin: 5px 0 0;
+    color: #666;
+}
+#restaurant-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.restaurant {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+.restaurant i {
+    font-size: 24px;
+    margin-right: 15px;
+    color: #007bff; /* Blue color for icons */
+}
+
+.restaurant-info {
+    flex-grow: 1;
+}
+
+.restaurant-info strong {
+    display: block;
+    font-size: 18px;
+    color: #333;
+}
+
+.restaurant-info p {
+    margin: 5px 0 0;
+    color: #666;
+}
+#cab-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.cab-service {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+.cab-service i {
+    font-size: 24px;
+    margin-right: 15px;
+    color: #007bff; /* Blue color for icons */
+}
+
+.cab-info {
+    flex-grow: 1;
+}
+
+.cab-info strong {
+    display: block;
+    font-size: 18px;
+    color: #333;
+}
+
+.cab-info p {
+    margin: 5px 0 0;
+    color: #666;
+}
+#cab-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.cab-service {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+.cab-service i {
+    font-size: 24px;
+    margin-right: 15px;
+    color: #007bff; /* Blue color for icons */
+}
+
+.cab-info {
+    flex-grow: 1;
+}
+
+.cab-info strong {
+    display: block;
+    font-size: 18px;
+    color: #333;
+}
+
+.cab-info p {
+    margin: 5px 0 0;
+    color: #666;
+}
+#hospital-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.hospital {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+.hospital i {
+    font-size: 24px;
+    margin-right: 15px;
+    color: #007bff; /* Blue color for icons */
+}
+
+.hospital-info {
+    flex-grow: 1;
+}
+
+.hospital-info strong {
+    display: block;
+    font-size: 18px;
+    color: #333;
+}
+
+.hospital-info p {
+    margin: 5px 0 0;
+    color: #666;
+}
+#gadget-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.gadget {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+.gadget i {
+    font-size: 24px;
+    margin-right: 15px;
+    color: #007bff; /* Blue color for icons */
+}
+
+.gadget-info {
+    flex-grow: 1;
+}
+
+.gadget-info strong {
+    display: block;
+    font-size: 18px;
+    color: #333;
+}
+
+.gadget-info p {
+    margin: 5px 0 0;
+    color: #666;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    flex: 1 0 30%;
+    box-sizing: border-box;
+}
+
+.product button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.product button:hover {
+    background-color: #218838;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.total {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.logo {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.logo img {
+    max-width: 100px; /* Adjust size as needed */
+    height: auto;
+}
+
+.banner {
+    background-color: #28a745; /* Green background */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
